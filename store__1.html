@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jee Store</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; background: #f9f9f9; color: #333; }
+
+    /* Header */
+    header { background: #333; color: #fff; padding: 15px 20px; text-align: center; }
+    header h1 { margin-bottom: 10px; }
+    nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; }
+    nav a { color: #fff; text-decoration: none; font-weight: bold; }
+    nav a:hover { color: #ffd700; }
+
+    /* Sections */
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 20px; }
+
+    /* Hero */
+    .hero { background: #ffd700; padding: 60px 20px; text-align: center; }
+    .hero h1 { margin-bottom: 10px; }
+
+    /* Products */
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .product-card { background: #fff; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .product-card img { max-width: 100%; border-radius: 8px; margin-bottom: 10px; }
+    .product-card h3 { margin-bottom: 5px; }
+    .price { font-weight: bold; color: green; margin: 10px 0; }
+    .order-btn { display: inline-block; background: #333; color: #fff; padding: 8px 15px; border-radius: 5px; text-decoration: none; }
+    .order-btn:hover { background: #ffd700; color: #333; }
+
+    /* Form */
+    form { display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: auto; }
+    input, textarea, button { padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+    button { background: #333; color: #fff; cursor: pointer; }
+    button:hover { background: #ffd700; color: #333; }
+
+    /* Footer */
+    footer { text-align: center; background: #333; color: #fff; padding: 15px; margin-top: 20px; }
+
+    /* Responsive */
+   @media (max-width: 600px) {
+      nav ul { flex-direction: column; gap: 10px; }
+      header h1 { font-size: 1.5rem; }
+      .hero { padding: 40px 15px; }
+      .products { grid-template-columns: 1fr; gap: 15px; }
+      .product-card { padding: 15px; }
+      .order-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+      }
+    }
+
+    /* Order Section */
+    #order { background: #f1f1f1; padding: 40px 20px; margin-top: 40px; }
+    #selected-product { display: none; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); max-width: 300px; margin: 20px auto; text-align: center; }
+    #selected-product img { max-width: 100%; border-radius: 8px; margin-bottom: 10px; }
+    #product-price { color: green; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Helfawi Store                              متجر حلفاوي</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="hero">
+    <h1>Upgrade to the Future with Jee Store</h1>
+    <h1>لسنا الوحيدون ولكننا الافضل</h1>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are a small business passionate about quality and customer satisfaction. All our products are carefully made and delivered with care.</p>
+  </section>
+
+  <!-- Products -->
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="products">
+      <!-- iPhones -->
+     <!-- 1 -->
+    <div class="product-card">
+      <img src="apple-iphone-16-pro-max.png" alt="Product 1">
+      <h3>iphone 16 pro max</h3>
+      <p class="price">3000000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 2 -->
+    <div class="product-card">
+      <img src="iPhone-14-Pro-Max.jpg" alt="iphone 14 pro max">
+      <h3>iphone 14 pro max</h3>
+      <p class="price">1500000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 3 -->
+    <div class="product-card">
+      <img src="iphone16_PNG5.png" alt="iphone 16">
+      <h3>iphone16</h3>
+      <p class="price">2000000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 4 -->
+    <div class="product-card">
+      <img src="OIP.webp" alt="Product 1">
+      <h3>iphone 15 pro max</h3>
+      <p class="price">9500000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 5 -->
+    <div class="product-card">
+      <img src="OIP.jpeg" alt="Product 2">
+      <h3>iphone 15</h3>
+      <p class="price">920000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 6 -->
+    <div class="product-card">
+      <img src="OIP (1).jpeg" alt="iphone 16">
+      <h3>iphone 15 pro</h3>
+      <p class="price">8000000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+      </div>
+     <!-- 7 -->
+      <div class="product-card">
+        <img src="iPhone-12-Pro-Max-webp.webp" alt="Product 7">
+        <h3>iphone 12 pro max</h3>
+        <p class="price">1500000 SDG</p>
+        <a href="#order" class="order-btn">Order Now</a>
+      </div>
+        <!-- ✅ New Product Example -->
+    <div class="product-card">
+      <img src="6009806_sd.avif" alt="iphone 13">
+      <h3>iphone 12 pro</h3>
+      <p class="price">1500000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+     <!-- 8 -->
+    <div class="product-card">
+      <img src="6009806_sd.avif" alt="iphone 12 pro">
+      <h3>iPhone 12 Pro</h3>
+      <p class="price">1500000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- === Samsung devices start here === -->
+
+    <!-- 9 -->
+    <div class="product-card">
+      <img src="OIP (1).webp" alt="Samsung S24 Ultra">
+      <h3>Samsung S24 Ultra</h3>
+      <p class="price">2000000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 10 -->
+    <div class="product-card">
+      <img src="download.webp" alt="Samsung S23 Ultra">
+      <h3>Samsung S23 Ultra</h3>
+      <p class="price">1800000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 11 -->
+    <div class="product-card">
+      <img src="download (1).webp" alt="Samsung S22 Ultra">
+      <h3>Samsung S22 Ultra</h3>
+      <p class="price">1600000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 12 -->
+    <div class="product-card">
+      <img src="OIP (2).webp" alt="Samsung S21 Ultra">
+      <h3>Samsung S21 Ultra</h3>
+      <p class="price">1500000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 13 -->
+    <div class="product-card">
+      <img src="download (2).webp" alt="Samsung S20 Ultra">
+      <h3>Samsung S20 Ultra</h3>
+      <p class="price">700000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 14 -->
+    <div class="product-card">
+      <img src="OIP (3).webp" alt="Samsung S20 Plus">
+      <h3>Samsung S20 Plus</h3>
+      <p class="price">600000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 15 -->
+    <div class="product-card">
+      <img src="download (3).webp" alt="Samsung Note20 Ultra">
+      <h3>Samsung Note20 Ultra</h3>
+      <p class="price">650000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- 16 -->
+    <div class="product-card">
+      <img src="OIP (4).webp" alt="Samsung Note10 Plus">
+      <h3>Samsung Note10 Plus</h3>
+      <p class="price">400000 SDG</p>
+      <a href="#order" class="order-btn">Order Now</a>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- =================== ORDER SECTION =================== -->
+  <section id="order">
+    <h2>Order Details</h2>
+
+    <!-- Selected Product Preview -->
+    <div id="selected-product">
+      <img id="product-image" src="" alt="Selected Product">
+      <h3 id="product-name"></h3>
+      <p id="product-price"></p>
+    </div>
+
+    <!-- Order Form -->
+    <form id="order-form">
+      <input type="text" id="customer-name" placeholder="Your Full Name" required>
+      <input type="tel" id="customer-phone" placeholder="Your Phone Number" required>
+      <input type="text" id="customer-address" placeholder="Your Address" required>
+      <button type="submit">Place Order</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jee Store. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Get all "Order Now" buttons
+    const orderButtons = document.querySelectorAll('.order-btn');
+
+    // Elements in order section
+    const selectedProduct = document.getElementById('selected-product');
+    const productImage = document.getElementById('product-image');
+    const productName = document.getElementById('product-name');
+    const productPrice = document.getElementById('product-price');
+
+    // Handle clicks on Order Now
+    orderButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault(); // stop normal link behavior
+
+        // Get product details from the card
+        const card = this.closest('.product-card');
+        const img = card.querySelector('img').src;
+        const name = card.querySelector('h3').textContent;
+        const price = card.querySelector('.price').textContent;
+
+        // Fill order section
+        productImage.src = img;
+        productName.textContent = name;
+        productPrice.textContent = price;
+        selectedProduct.style.display = 'block';
+
+        // Scroll to order section
+        document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Handle order form submission
+    document.getElementById('order-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('customer-name').value;
+      const phone = document.getElementById('customer-phone').value;
+      const address = document.getElementById('customer-address').value;
+
+      alert(`✅ Thank you ${name}!\nYour order for "${productName.textContent}" has been received.\nWe will contact you at ${phone}.`);
+
+      // Reset form after submission
+      this.reset();
+      selectedProduct.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
